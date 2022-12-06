@@ -5,6 +5,7 @@ public class Main {
         Human Katerina = new Human(1992,"Катя","Калининград", "продакт-менеджер");
         Human Artem = new Human(1995,"Артем", "Москва", "директор по развитию бизнеса");
 
+
         System.out.println(Maksim);
         System.out.println(Anna);
         System.out.println(Katerina);
