@@ -1,9 +1,35 @@
 public class Human {
 
-    public int yearOfBirth;
+
+    private int yearOfBirth;
     public String name;
-    public String town;
+    private String town;
     public String jobTitle;
+
+    public int getYearOfBirth() {// гетер на дату рождения
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {//сетер на дату рождения
+        if (yearOfBirth < 0) {// не понимаю зачем тут проверка на пустоту строки int не может быть равен null по IDEA =)
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+    }
+
+    public String getTown() {// гетер для города
+        return town;
+    }
+
+    public void setTown(String town) {// сетер для города с проверками
+        if (town == null || town.isEmpty() || town.isBlank()) {
+            this.town = "Информация не указана";
+        }else {
+            this.town = town;
+        }
+    }
+    // конструкторы на любой вкус и цвет =)
     Human(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
         this.name = "Информация не указана";
@@ -41,6 +67,7 @@ public class Human {
         }
 
     }
+    // переопределил toString
     @Override
     public String toString(){
         return "Привет! меня зовут " + name + " Я из города " + town + " Я родился в " + yearOfBirth + " году. Я работаю на должности "+jobTitle+ ". Будем знакомы!";
